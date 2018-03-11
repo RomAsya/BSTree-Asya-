@@ -26,11 +26,10 @@ auto Tree::deleting(Node*& curr) -> bool {
   if (curr->right != nullptr) deleting(curr->right);
   if (curr->left != nullptr) deleting(curr->left);
   std::cout << curr->data << std::endl;
+  if ((root->right == nullptr) && (root->left == nullptr)) {
+    root = nullptr;
+    return true;
+  }
   delete curr;
 }
-Tree::~Tree() {
-  if ((root->right == nullptr) && (root->left == nullptr))
-    delete root;
-  else
-    deleting(root);
-}
+Tree::~Tree() { deleting(root); }
