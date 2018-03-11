@@ -23,6 +23,7 @@ auto Tree::insert(int value) -> bool {
   return true;
 }
 auto Tree::deleting(Node*& curr) -> bool {
+  if (curr == nullptr) return true;
   if (curr->right != nullptr) deleting(curr->right);
   if (curr->left != nullptr) deleting(curr->left);
   if (curr->data != root->data)
