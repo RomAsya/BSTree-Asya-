@@ -1,7 +1,8 @@
 #include "bstree.hpp"
 #include <iostream>
 using namespace BSTree;
-Tree::Tree() { root = nullptr; }
+Tree::Tree() {
+  root = nullptr; }
 auto Tree::insert(int value) -> bool {
   if (root == nullptr) {
     root = new Node{value, nullptr, nullptr};
