@@ -22,13 +22,11 @@ auto Tree::insert(int value) -> bool {
     parent->left = new Node{value, nullptr, nullptr};
   return true;
 }
-auto Tree::deleting(Node*& curr) -> bool {
-  if (curr == nullptr) return true;
+auto Tree::deleting(Node*& curr) -> void {
+  if (curr == nullptr) return;
   if (curr->right != nullptr) deleting(curr->right);
   if (curr->left != nullptr) deleting(curr->left);
-  if (curr->data != root->data)
-    delete curr;
-  else
-    curr = nullptr;
+  delete curr;
+  curr = nullptr;
 }
 Tree::~Tree() { deleting(root); }
