@@ -11,6 +11,8 @@ auto Tree::insert(int value) -> bool {
   Node *parent = root;
   Node *curr = root;
   while (curr != nullptr) {
+    if (curr->data == value) 
+      return false;
     if (curr->data < value)
       curr = curr->right;
     else
