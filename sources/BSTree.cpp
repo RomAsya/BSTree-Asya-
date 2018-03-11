@@ -25,11 +25,9 @@ auto Tree::insert(int value) -> bool {
 auto Tree::deleting(Node*& curr) -> bool {
   if (curr->right != nullptr) deleting(curr->right);
   if (curr->left != nullptr) deleting(curr->left);
-  std::cout << curr->data << std::endl;
-  if ((root->right == nullptr) && (root->left == nullptr)) {
-    root = nullptr;
-    return true;
-  }
-  delete curr;
+  if (curr->data != root->data)
+    delete curr;
+  else
+    curr = nullptr;
 }
 Tree::~Tree() { deleting(root); }
