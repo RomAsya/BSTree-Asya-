@@ -9,6 +9,7 @@ class Tree {
  public:
   Tree();
   auto insert(int value) -> bool;
+  auto deleting(Node*&curr) -> bool;
   ~Tree();
 };
 }
