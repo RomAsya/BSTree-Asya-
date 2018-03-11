@@ -30,4 +30,5 @@ auto Tree::deleting(Node*& curr) -> void {
   delete curr;
   curr = nullptr;
 }
-Tree::~Tree() { deleting(root); }
+Tree::~Tree() {
+  deleting(root); }
