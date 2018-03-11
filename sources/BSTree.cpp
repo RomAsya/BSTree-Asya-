@@ -1,4 +1,4 @@
-#include "BSTree.hpp"
+#include "bstree.hpp"
 #include <iostream>
 using namespace BSTree;
 Tree::Tree() { root = nullptr; }
