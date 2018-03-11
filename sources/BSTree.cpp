@@ -22,32 +22,15 @@ auto Tree::insert(int value) -> bool {
     parent->left = new Node{value, nullptr, nullptr};
   return true;
 }
+auto Tree::deleting(Node*& curr) -> bool {
+  if (curr->right != nullptr) deleting(curr->right);
+  if (curr->left != nullptr) deleting(curr->left);
+  std::cout << curr->data << std::endl;
+  delete curr;
+}
 Tree::~Tree() {
-  while ((root->right != nullptr) && (root->left != nullptr)) {
-    Node *curr = root;
-    Node *parent = root;
-    while (1) {
-      if ((curr->right != nullptr) && (curr->left != nullptr)) {
-        parent = curr;
-        curr = curr->right;
-        continue;
-      }
-      if (curr->left != nullptr) {
-        parent = curr;
-        curr = curr->left;
-        continue;
-      }
-      if (curr->right != nullptr) {
-        parent = curr;
-        curr = curr->right;
-        continue;
-      }
-      break;
-    }
-    if (curr->data > parent->data)
-      delete parent->right;
-    else
-      delete parent->left;
-  }
-  delete root;
+  if ((root->right == nullptr) && (root->left == nullptr))
+    delete root;
+  else
+    deleting(root);
 }
