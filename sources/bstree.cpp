@@ -25,6 +25,23 @@ auto Tree::insert(int value) -> bool {
     parent->left = new Node{value, nullptr, nullptr};
   return true;
 }
+auto Tree::print_elements(Node*& curr, int space) -> void {
+  if (curr != nullptr) {
+    if (curr->right != nullptr)
+      print_elements(curr->right, space + 1);
+    for (int i = 0; i < space; i++) {
+      std::cout << "   ";
+    }
+    if ((curr->data) != (root->data)) 
+      std::cout << "--";
+    std::cout << curr->data << std::endl;
+    if (curr->left != nullptr) 
+      print_elements(curr->left, space + 1);
+  } else
+    std::cout << "Tree is empty" << std::endl;
+}
+auto Tree::print() -> void {
+  print_elements(root, 0); }
 auto Tree::deleting(Node*& curr) -> void {
   if (curr == nullptr) return;
   if (curr->right != nullptr) deleting(curr->right);
