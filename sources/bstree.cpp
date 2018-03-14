@@ -25,7 +25,7 @@ auto Tree::insert(int value) -> bool {
     parent->left = new Node{value, nullptr, nullptr};
   return true;
 }
-auto Tree::print_elements(Node*& curr, int space) -> void {
+auto Tree::print_elements(Node* curr, int space) -> void {
   if (curr != nullptr) {
     if (curr->right != nullptr)
       print_elements(curr->right, space + 1);
