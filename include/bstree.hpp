@@ -9,8 +9,8 @@ class Tree {
  public:
   Tree();
   auto insert(int value) -> bool;
-  auto print_elements(Node* curr, int space) -> void;
-  auto print() -> void;
+  auto print_elements(Node* curr, int space) const -> void;
+  auto print() const -> void;
   auto deleting(Node*&curr) -> void;
   ~Tree();
 };
