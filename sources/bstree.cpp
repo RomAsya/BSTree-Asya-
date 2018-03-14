@@ -25,7 +25,7 @@ auto Tree::insert(int value) -> bool {
     parent->left = new Node{value, nullptr, nullptr};
   return true;
 }
-auto Tree::print_elements(Node* curr, int space) -> void {
+auto Tree::print_elements(Node* curr, int space) const -> void {
   if (curr != nullptr) {
     if (curr->right != nullptr)
       print_elements(curr->right, space + 1);
@@ -40,7 +40,7 @@ auto Tree::print_elements(Node* curr, int space) -> void {
   } else
     std::cout << "Tree is empty" << std::endl;
 }
-auto Tree::print() -> void {
+auto Tree::print() const -> void {
   print_elements(root, 0); }
 auto Tree::deleting(Node*& curr) -> void {
   if (curr == nullptr) return;
