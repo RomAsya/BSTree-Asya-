@@ -1,6 +1,6 @@
 ## BSTree
 ## Processing the input data
-```
+```bash
 $ g++ tree.cpp sources.cpp -o bstree -std=c++11
 $ ./bstree 1 2 3 # с указаниями входных параметров
 Select one of the operations:
@@ -27,7 +27,7 @@ Select one of the operations:
 8.Complete the programи 
 ```
 ## Printing elements
-```
+```bash
 # Вывод на экран не пустого древа
 $ g++ tree.cpp sources.cpp -o bstree -std=c++11
 $ ./bstree 6 8 7 9 4 1
