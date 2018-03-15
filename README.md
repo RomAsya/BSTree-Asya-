@@ -40,7 +40,9 @@ Select one of the operations:
 6.Load the tree from a file
 7.Check node availability
 8.Complete the program
-1
+1↵
+```
+```
       --9
    --8
       --7
