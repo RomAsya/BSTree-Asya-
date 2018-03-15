@@ -1,7 +1,7 @@
 ## BSTree
 ## Processing the input data
 ```ShellSession
-$ g++ tree.cpp sources.cpp -o bstree -std=c++11
+$ g++ example1.cpp bstree.cpp -o bstree -std=c++11
 $ ./bstree 1 2 3 # с указаниями входных параметров
 Select one of the operations:
 1.Print the tree on the screen
@@ -14,7 +14,7 @@ Select one of the operations:
 8.Complete the program
 
 
-$ g++ tree.cpp sources.cpp -o bstree -std=c++11
+$ g++ example1.cpp bstree.cpp -o bstree -std=c++11
 $ ./bstree # без указания входных данных
 Select one of the operations:
 1.Print the tree on the screen
@@ -29,7 +29,7 @@ Select one of the operations:
 ## Printing elements
 ```ShellSession
 # Вывод на экран не пустого древа
-$ g++ tree.cpp sources.cpp -o bstree -std=c++11
+$ g++ example2.cpp bstree.cpp -o bstree -std=c++11
 $ ./bstree 6 8 7 9 4 1
 Select one of the operations:
 1.Print the tree on the screen
@@ -49,7 +49,7 @@ Select one of the operations:
       --1
       
 # Вывод на экран пустого древа
-$ g++ tree.cpp sources.cpp -o bstree -std=c++11
+$ g++ example2.cpp bstree.cpp -o bstree -std=c++11
 $ ./bstree 
 Select one of the operations:
 1.Print the tree on the screen
