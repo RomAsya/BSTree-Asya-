@@ -1,7 +1,7 @@
 ## BSTree
 ## Processing the input data
 ```ShellSession
-$ g++ example1.cpp bstree.cpp -o bstree -std=c++11
+$ g++ examples/example1.cpp includes/bstree.cpp -o bstree -std=c++11
 $ ./bstree 1 2 3 # с указаниями входных параметров
 Select one of the operations:
 1.Print the tree on the screen
@@ -14,7 +14,7 @@ Select one of the operations:
 8.Complete the program
 
 
-$ g++ example1.cpp bstree.cpp -o bstree -std=c++11
+$ g++ examples/example1.cpp includes/bstree.cpp -o bstree -std=c++11
 $ ./bstree # без указания входных данных
 Select one of the operations:
 1.Print the tree on the screen
@@ -29,7 +29,7 @@ Select one of the operations:
 ## Printing elements
 ```ShellSession
 # Вывод на экран не пустого древа
-$ g++ example2.cpp bstree.cpp -o bstree -std=c++11
+$ g++ examples/example2.cpp includes/bstree.cpp -o bstree -std=c++11
 $ ./bstree 6 8 7 9 4 1
 Select one of the operations:
 1.Print the tree on the screen
@@ -49,7 +49,7 @@ Select one of the operations:
       --1
       
 # Вывод на экран пустого древа
-$ g++ example2.cpp bstree.cpp -o bstree -std=c++11
+$ g++ examples/example2.cpp includes/bstree.cpp -o bstree -std=c++11
 $ ./bstree 
 Select one of the operations:
 1.Print the tree on the screen
@@ -62,4 +62,123 @@ Select one of the operations:
 8.Complete the program
 1↵
 Tree is empty
+```
+## Вывод списка узлов в стандвртный поток вывода с использованием указанного подхода
+```ShellSession
+# Вывод на экран узлов дерева с использованием прямого обхода
+$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ ./bstree 23 45 13 56 22
+Select one of the operations:
+1.Print the tree on the screen
+2.List the nodes of the tree
+3.Add a node to the tree
+4.Remove the node from the tree
+5.Save tree to a file
+6.Load the tree from a file
+7.Check node availability
+8.Complete the program
+2↵
+a.Straight detour
+b.Transverse detour
+c.Back detour
+a↵
+23 13 22 45 56 
+
+# Вывод на экран узлов дерева с использованием поперечного обхода
+$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ ./bstree 23 45 13 56 22
+Select one of the operations:
+1.Print the tree on the screen
+2.List the nodes of the tree
+3.Add a node to the tree
+4.Remove the node from the tree
+5.Save tree to a file
+6.Load the tree from a file
+7.Check node availability
+8.Complete the program
+2↵
+a.Straight detour
+b.Transverse detour
+c.Back detour
+b↵
+13 22 23 45 56
+
+# Вывод на экран узлов дерева с использованием обратного обхода
+$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ ./bstree 23 45 13 56 22
+Select one of the operations:
+1.Print the tree on the screen
+2.List the nodes of the tree
+3.Add a node to the tree
+4.Remove the node from the tree
+5.Save tree to a file
+6.Load the tree from a file
+7.Check node availability
+8.Complete the program
+2↵
+a.Straight detour
+b.Transverse detour
+c.Back detour
+c↵
+22 13 56 45 23
+
+# Вывод списка узлов пустого дерева на экран
+$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ ./bstree
+Select one of the operations:
+1.Print the tree on the screen
+2.List the nodes of the tree
+3.Add a node to the tree
+4.Remove the node from the tree
+5.Save tree to a file
+6.Load the tree from a file
+7.Check node availability
+8.Complete the program
+2↵
+Tree is empty
+```
+## Завершение работы программы
+```ShellSession
+# Успешный выход из программы
+$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ ./bstree
+Select one of the operations:
+1.Print the tree on the screen
+2.List the nodes of the tree
+3.Add a node to the tree
+4.Remove the node from the tree
+5.Save tree to a file
+6.Load the tree from a file
+7.Check node availability
+8.Complete the program
+8↵
+Do you want to leave program? ( yes, no )
+y↵
+Good by!
+
+# Неуспешная попытка выхода из программы 
+$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ ./bstree
+Select one of the operations:
+1.Print the tree on the screen
+2.List the nodes of the tree
+3.Add a node to the tree
+4.Remove the node from the tree
+5.Save tree to a file
+6.Load the tree from a file
+7.Check node availability
+8.Complete the program
+8↵
+Do you want to leave program? ( yes, no )
+n↵
+Select one of the operations:
+1.Print the tree on the screen
+2.List the nodes of the tree
+3.Add a node to the tree
+4.Remove the node from the tree
+5.Save tree to a file
+6.Load the tree from a file
+7.Check node availability
+8.Complete the program
+
 ```
