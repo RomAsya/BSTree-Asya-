@@ -1,14 +1,22 @@
 #include "bstree.hpp"
 #include <iostream>
 using namespace BSTree;
-Tree::Tree() {
-  root = nullptr; }
+
+Tree::Tree() : root(nullptr) {}
+
+Node::Node(int val) {
+  data = val;
+  right = nullptr;
+  left = nullptr;
+}
+
 auto Tree::get_tree_existence() const -> bool {
   if (root == nullptr) return false;
 }
+
 auto Tree::insert(int value) -> bool {
   if (root == nullptr) {
-    root = new Node{value, nullptr, nullptr};
+    root = new Node{value};
     return true;
   }
   Node *parent = root;
@@ -23,11 +31,12 @@ auto Tree::insert(int value) -> bool {
     if (curr != nullptr) parent = curr;
   }
   if (parent->data < value)
-    parent->right = new Node{value, nullptr, nullptr};
+    parent->right = new Node{value};
   else
-    parent->left = new Node{value, nullptr, nullptr};
+    parent->left = new Node{value};
   return true;
 }
+
 auto Tree::print_elements(Node* curr, int space) const -> void {
   if (curr != nullptr) {
     if (curr->right != nullptr)
@@ -43,8 +52,10 @@ auto Tree::print_elements(Node* curr, int space) const -> void {
   } else
     std::cout << "Tree is empty" << std::endl;
 }
+
 auto Tree::print() const -> void {
   print_elements(root, 0); }
+
 auto Tree::deleting(Node*& curr) -> void {
   if (curr == nullptr) return;
   if (curr->right != nullptr) deleting(curr->right);
@@ -52,26 +63,33 @@ auto Tree::deleting(Node*& curr) -> void {
   delete curr;
   curr = nullptr;
 }
+
 auto Tree::straight_detour(Node* curr) const -> void {
   std::cout << curr->data << " ";
   if (curr->left != nullptr) straight_detour(curr->left);
   if (curr->right != nullptr) straight_detour(curr->right);
 }
+
 auto Tree::straight() const -> void {
   straight_detour(root); }
+
 auto Tree::back_detour(Node* curr) const -> void {
   if (curr->left != nullptr) back_detour(curr->left);
   if (curr->right != nullptr) back_detour(curr->right);
   std::cout << curr->data << " ";
 }
+
 auto Tree::back() const -> void {
   back_detour(root); }
+
 auto Tree::transverse_detour(Node* curr) const -> void {
   if (curr->left != nullptr) transverse_detour(curr->left);
   std::cout << curr->data << " ";
   if (curr->right != nullptr) transverse_detour(curr->right);
 }
+
 auto Tree::transverse() const -> void { 
   transverse_detour(root); }
+
 Tree::~Tree() {
   deleting(root); }
