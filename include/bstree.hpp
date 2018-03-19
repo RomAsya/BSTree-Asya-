@@ -3,6 +3,7 @@ struct Node {
   int data;
   Node* left;
   Node* right;
+  Node(int val);
 };
 class Tree {
   Node* root;
