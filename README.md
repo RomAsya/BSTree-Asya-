@@ -1,7 +1,7 @@
 ## BSTree
 ## Обработка входных данных
 ```ShellSession
-$ g++ examples/example1.cpp includes/bstree.cpp -o bstree -std=c++11
+$ g++ examples/example1.cpp sources/bstree.cpp -o bstree -std=c++11
 $ ./bstree 1 2 3 # с указаниями входных параметров
 Select one of the operations:
 1.Print the tree on the screen
@@ -14,7 +14,7 @@ Select one of the operations:
 8.Complete the program
 
 
-$ g++ examples/example1.cpp includes/bstree.cpp -o bstree -std=c++11
+$ g++ examples/example1.cpp sources/bstree.cpp -o bstree -std=c++11
 $ ./bstree # без указания входных данных
 Select one of the operations:
 1.Print the tree on the screen
@@ -28,8 +28,8 @@ Select one of the operations:
 ```
 ## Печать дерева
 ```ShellSession
-# Вывод на экран не пустого древа
-$ g++ examples/example2.cpp includes/bstree.cpp -o bstree -std=c++11
+# Вывод на экран непустого древа
+$ g++ examples/example2.cpp sources/bstree.cpp -o bstree -std=c++11
 $ ./bstree 6 8 7 9 4 1
 Select one of the operations:
 1.Print the tree on the screen
@@ -49,7 +49,7 @@ Select one of the operations:
       --1
       
 # Вывод на экран пустого древа
-$ g++ examples/example2.cpp includes/bstree.cpp -o bstree -std=c++11
+$ g++ examples/example2.cpp sources/bstree.cpp -o bstree -std=c++11
 $ ./bstree 
 Select one of the operations:
 1.Print the tree on the screen
@@ -66,7 +66,7 @@ Tree is empty
 ## Вывод списка узлов в стандартный поток вывода с использованием указанного подхода
 ```ShellSession
 # Вывод на экран узлов дерева с использованием прямого обхода
-$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ g++ examples/example3.cpp sources/bstree.cpp -o bstree -std=c++11
 $ ./bstree 23 45 13 56 22
 Select one of the operations:
 1.Print the tree on the screen
@@ -85,7 +85,7 @@ a↵
 23 13 22 45 56 
 
 # Вывод на экран узлов дерева с использованием поперечного обхода
-$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ g++ examples/example3.cpp sources/bstree.cpp -o bstree -std=c++11
 $ ./bstree 23 45 13 56 22
 Select one of the operations:
 1.Print the tree on the screen
@@ -104,7 +104,7 @@ b↵
 13 22 23 45 56
 
 # Вывод на экран узлов дерева с использованием обратного обхода
-$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ g++ examples/example3.cpp sources/bstree.cpp -o bstree -std=c++11
 $ ./bstree 23 45 13 56 22
 Select one of the operations:
 1.Print the tree on the screen
@@ -123,7 +123,7 @@ c↵
 22 13 56 45 23
 
 # Вывод списка узлов пустого дерева на экран
-$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ g++ examples/example3.cpp sources/bstree.cpp -o bstree -std=c++11
 $ ./bstree
 Select one of the operations:
 1.Print the tree on the screen
@@ -140,7 +140,7 @@ Tree is empty
 ## Завершение работы программы
 ```ShellSession
 # Успешный выход из программы
-$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ g++ examples/example3.cpp sources/bstree.cpp -o bstree -std=c++11
 $ ./bstree
 Select one of the operations:
 1.Print the tree on the screen
@@ -157,7 +157,7 @@ y↵
 Good by!
 
 # Неуспешная попытка выхода из программы 
-$ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
+$ g++ examples/example3.cpp sources/bstree.cpp -o bstree -std=c++11
 $ ./bstree
 Select one of the operations:
 1.Print the tree on the screen
