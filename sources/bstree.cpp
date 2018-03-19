@@ -4,10 +4,7 @@ using namespace BSTree;
 Tree::Tree() {
   root = nullptr; }
 auto Tree::get_tree_existence() const -> bool {
-  if (root != nullptr)
-    return true;
-  else
-    return false;
+  if (root == nullptr) return false;
 }
 auto Tree::insert(int value) -> bool {
   if (root == nullptr) {
