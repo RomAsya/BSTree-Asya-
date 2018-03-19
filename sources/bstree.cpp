@@ -3,6 +3,12 @@
 using namespace BSTree;
 Tree::Tree() {
   root = nullptr; }
+auto Tree::get_tree_existence() const -> bool {
+  if (root != nullptr)
+    return true;
+  else
+    return false;
+}
 auto Tree::insert(int value) -> bool {
   if (root == nullptr) {
     root = new Node{value, nullptr, nullptr};
@@ -49,5 +55,26 @@ auto Tree::deleting(Node*& curr) -> void {
   delete curr;
   curr = nullptr;
 }
+auto Tree::straight_detour(Node* curr) const -> void {
+  std::cout << curr->data << " ";
+  if (curr->left != nullptr) straight_detour(curr->left);
+  if (curr->right != nullptr) straight_detour(curr->right);
+}
+auto Tree::straight() const -> void {
+  straight_detour(root); }
+auto Tree::back_detour(Node* curr) const -> void {
+  if (curr->left != nullptr) back_detour(curr->left);
+  if (curr->right != nullptr) back_detour(curr->right);
+  std::cout << curr->data << " ";
+}
+auto Tree::back() const -> void {
+  back_detour(root); }
+auto Tree::transverse_detour(Node* curr) const -> void {
+  if (curr->left != nullptr) transverse_detour(curr->left);
+  std::cout << curr->data << " ";
+  if (curr->right != nullptr) transverse_detour(curr->right);
+}
+auto Tree::transverse() const -> void { 
+  transverse_detour(root); }
 Tree::~Tree() {
   deleting(root); }
