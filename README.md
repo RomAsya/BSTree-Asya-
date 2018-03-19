@@ -1,5 +1,5 @@
 ## BSTree
-## Processing the input data
+## Обработка входных данных
 ```ShellSession
 $ g++ examples/example1.cpp includes/bstree.cpp -o bstree -std=c++11
 $ ./bstree 1 2 3 # с указаниями входных параметров
@@ -26,7 +26,7 @@ Select one of the operations:
 7.Check node availability
 8.Complete the programи 
 ```
-## Printing elements
+## Печать дерева
 ```ShellSession
 # Вывод на экран не пустого древа
 $ g++ examples/example2.cpp includes/bstree.cpp -o bstree -std=c++11
@@ -63,7 +63,7 @@ Select one of the operations:
 1↵
 Tree is empty
 ```
-## Вывод списка узлов в стандвртный поток вывода с использованием указанного подхода
+## Вывод списка узлов в стандартный поток вывода с использованием указанного подхода
 ```ShellSession
 # Вывод на экран узлов дерева с использованием прямого обхода
 $ g++ examples/example3.cpp includes/bstree.cpp -o bstree -std=c++11
