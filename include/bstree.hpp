@@ -20,7 +20,7 @@ class Tree {
   auto straight() const -> void;
   auto back() const -> void;
   auto transverse() const -> void;
-  auto get_tree_existence() const -> bool;
+  auto empty() const -> bool;
   ~Tree();
 };
 }
