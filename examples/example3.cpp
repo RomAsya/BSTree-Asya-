@@ -48,7 +48,7 @@ auto Menu(Tree *&tree) -> void {
         tree->print();
         break;
       case 2:
-        if (tree->get_tree_existence()) {
+        if (!(tree->empty())) {
           cout << "a.Straight detour" << endl;
           cout << "b.Transverse detour" << endl;
           cout << "c.Back detour" << endl;
