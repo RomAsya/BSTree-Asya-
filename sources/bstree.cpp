@@ -10,8 +10,11 @@ Node::Node(int val) {
   left = nullptr;
 }
 
-auto Tree::get_tree_existence() const -> bool {
-  if (root == nullptr) return false;
+auto Tree::empty() const -> bool {
+  bool empty;
+empty:
+  root == nullptr ? true : false;
+  return empty;
 }
 
 auto Tree::insert(int value) -> bool {
