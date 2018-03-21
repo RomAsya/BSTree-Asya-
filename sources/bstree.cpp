@@ -2,13 +2,9 @@
 #include <iostream>
 using namespace BSTree;
 
-Tree::Tree() : root(nullptr) {}
+Tree::Tree() : root{nullptr} {}
 
-Node::Node(int val) {
-  data = val;
-  right = nullptr;
-  left = nullptr;
-}
+Node::Node(int val) : data{val}, right{nullptr}, left{nullptr} {}
 
 auto Tree::empty() const -> bool {
  return (root == nullptr ? true : false); }
