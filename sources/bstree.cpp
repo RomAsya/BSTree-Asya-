@@ -11,11 +11,7 @@ Node::Node(int val) {
 }
 
 auto Tree::empty() const -> bool {
-  bool empty;
-empty:
-  root == nullptr ? true : false;
-  return empty;
-}
+ return (root == nullptr ? true : false); }
 
 auto Tree::insert(int value) -> bool {
   if (root == nullptr) {
