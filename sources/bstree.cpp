@@ -86,5 +86,93 @@ auto Tree::transverse_detour(Node* curr) const -> void {
 auto Tree::transverse() const -> void { 
   transverse_detour(root); }
 
+auto Tree::add_node(int value) -> void {
+  if (!(this->insert(value))) {
+    std::cerr << "This Node is already exist!!!" << std::endl;
+  }
+}
+
+auto Tree::delete_node(int value) -> bool {
+  if ((root->right == nullptr) && (root->left == nullptr) &&
+      (root->data == value)) {
+    delete root;
+    root = nullptr;
+    std::cout << "Node was succesfully deleted" << std::endl;
+    return true;
+  }
+  Node* parent = root;
+  Node* curr = root;
+  Node* parent_del = root;
+  int value_new;
+  while (curr != nullptr) {
+    if (curr->data == value) break;
+    parent_del = curr;
+    if (curr->data > value)
+      curr = curr->left;
+    else {
+      if (curr->data < value) curr = curr->right;
+    }
+  }  
+  if (curr == nullptr) {
+    std::cout << "Node wasn't founded" << std::endl;
+    return false;
+  }  
+  if (curr->left != nullptr) {
+    parent = curr;
+    curr = curr->left;
+    while (1) {
+      if (curr->right != nullptr) {
+        parent = curr;
+        curr = curr->right;
+      }
+      if (curr->right == nullptr) break;
+    }
+    value_new = curr->data;
+    if ((parent->left != nullptr) && (parent->left->data == value_new)) {
+      delete parent->left;
+      parent->left = nullptr;
+    } else {
+      delete parent->right;
+      parent->right = nullptr;
+    }
+  } else {
+    if (curr->right != nullptr) {
+      parent = curr;
+      curr = curr->right;
+      while (1) {
+        if (curr->left != nullptr) {
+          parent = curr;
+          curr = curr->left;
+        }
+        if (curr->left == nullptr) break;
+      }
+      value_new = curr->data;
+      std::cout << value_new << std::endl;
+      if ((parent->right != nullptr) && (parent->right->data == value_new)) {
+        delete parent->right;
+        parent->right = nullptr;
+      } else {
+        delete parent->left;
+        parent->left = nullptr;
+      }
+    } else {
+      if (parent_del->data > value) {
+        delete parent_del->left;
+        parent_del->left = nullptr;
+        std::cout << "Node was succesfully deleted" << std::endl;
+        return true;
+      }
+      delete parent_del->right;
+      parent_del->right = nullptr;
+      std::cout << "Node was succesfully deleted" << std::endl;
+      return true;
+    }
+  }
+  std::cout << parent_del->data << std::endl;
+  if (parent_del->data > value) parent_del->left->data = value_new;
+  if (parent_del->data < value) parent_del->right->data = value_new;
+  if (parent_del->data == value) root->data = value_new;
+  std::cout << "Node was succesfully deleted" << std::endl;
+}
 Tree::~Tree() {
   deleting(root); }
