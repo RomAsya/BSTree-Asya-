@@ -21,6 +21,8 @@ class Tree {
   auto back() const -> void;
   auto transverse() const -> void;
   auto empty() const -> bool;
+  auto add_node(int value) -> void;
+  auto delete_node(int value) -> bool;
   ~Tree();
 };
 }
