@@ -97,7 +97,6 @@ auto Tree::delete_node(int value) -> bool {
       (root->data == value)) {
     delete root;
     root = nullptr;
-    std::cout << "Node was succesfully deleted" << std::endl;
     return true;
   }
   Node* parent = root;
@@ -112,11 +111,8 @@ auto Tree::delete_node(int value) -> bool {
     else {
       if (curr->data < value) curr = curr->right;
     }
-  }  
-  if (curr == nullptr) {
-    std::cout << "Node wasn't founded" << std::endl;
-    return false;
-  }  
+  }  // нашли удаляемый узел и его родителя
+  if (curr == nullptr) return false;  //узел не существует в дереве
   if (curr->left != nullptr) {
     parent = curr;
     curr = curr->left;
@@ -159,12 +155,10 @@ auto Tree::delete_node(int value) -> bool {
       if (parent_del->data > value) {
         delete parent_del->left;
         parent_del->left = nullptr;
-        std::cout << "Node was succesfully deleted" << std::endl;
         return true;
       }
       delete parent_del->right;
       parent_del->right = nullptr;
-      std::cout << "Node was succesfully deleted" << std::endl;
       return true;
     }
   }
@@ -172,7 +166,6 @@ auto Tree::delete_node(int value) -> bool {
   if (parent_del->data > value) parent_del->left->data = value_new;
   if (parent_del->data < value) parent_del->right->data = value_new;
   if (parent_del->data == value) root->data = value_new;
-  std::cout << "Node was succesfully deleted" << std::endl;
 }
 Tree::~Tree() {
   deleting(root); }
